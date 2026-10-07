@@ -1,5 +1,7 @@
 # Ghana T-Bill Calculator
 
+   ![Growth chart](growth_chart.png)
+
 A Python command-line tool that compares investing in a Ghana Treasury Bill against a fixed deposit, so you can see which one gives more money at maturity.
 
 ## Features
