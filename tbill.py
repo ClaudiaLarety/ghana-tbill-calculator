@@ -26,5 +26,25 @@ def compare(amount, discount_rate, fd_rate, days):
     print(f"Fixed deposit value: GH₵{fd:,.2f}")
     print(f"Winner: {winner} by GH₵{abs(tbill - fd):,.2f}")
 
+def ask_number(prompt):
+    """Keep asking until the user types a valid positive number."""
+    while True:
+        try:
+            value = float(input(prompt))
+            if value > 0:
+                return value
+            print("Please enter a number greater than 0.")
+        except ValueError:
+            print("That's not a number. Try again.")
+
+def main():
+    print("=== Ghana T-Bill vs Fixed Deposit ===")
+    amount = ask_number("Amount to invest (GH₵): ")
+    discount_rate = ask_number("T-Bill discount rate (%): ") / 100
+    fd_rate = ask_number("Fixed deposit rate (%): ") / 100
+    days = int(ask_number("Days (91, 182 or 364): "))
+    print()
+    compare(amount, discount_rate, fd_rate, days)
+
 if __name__ == "__main__":
-    compare(10000, 0.25, 0.22, 91)
+    main()
